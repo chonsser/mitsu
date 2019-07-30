@@ -135,7 +135,7 @@ defmodule Mitsu.Client do
     AMQP.Connection.close(state["amqp_conn"])
     state = Map.put(state, "amqp_conn", nil)
 
-    Logger.info("Terminated")
+    Logger.info("Terminated: #{reason}")
     exit(:normal)
   end
 
