@@ -100,7 +100,6 @@ defmodule Mitsu.Client do
   end
 
   def handle_hb_ack(state) do
-    Logger.info("Heartbeat_ACK[]")
     {state, nil}
   end
 
