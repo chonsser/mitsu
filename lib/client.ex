@@ -119,7 +119,7 @@ defmodule Mitsu.Client do
       "d" => state["seq"]
     }
 
-    Process.send_after(self(), :heartbeat, state.hb_interval)
+    Process.send_after(self(), :heartbeat, state["hb_interval"])
     {:reply, {:binary, :erlang.term_to_binary(to_send)}, state}
   end
 
