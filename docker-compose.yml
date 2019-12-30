@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mitsu:
+    build:
+      context: .
+      dockerfile: docker/elixir/Dockerfile
+    env_file: .env
+    volumes:
+      - './:/usr/src/mitsu'
+    ports:
+      - '5672:5672'
+    network_mode: host
+volumes:
+  mitsu:
+    driver: local

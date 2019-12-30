@@ -91,7 +91,7 @@ defmodule ChildrenLoop do
   def loop(options_list, object) do
     [head | tail] = options_list
 
-    object = object ++ [{Mitsu.Client, head}]
+    object = object ++ [Supervisor.child_spec({Mitsu.Client, head}, id: length(object))]
     loop(tail, object)
   end
   
