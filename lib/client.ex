@@ -17,6 +17,7 @@ defmodule Mitsu.Client do
     state = Map.put(state, "amqp_channel", channel)
 
     Logger.info("Connecting to #{state["gateway_url"]}")
+    Process.sleep(3000)
     WebSockex.start_link(state["gateway_url"], __MODULE__, state)
   end
 
